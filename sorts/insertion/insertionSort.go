@@ -4,7 +4,6 @@ import (
     "fmt"
 )
 
-
 // Starting from left to right, examine each item and compare it to items on its left.
 // Insert the item in the correct position in the array.
 // The array will form sorted and unsorted paritions.
@@ -22,7 +21,7 @@ func Run() {
         j := i
         for j > 0 && numbers[j - 1] > numbers[j] {
             numbers[j], numbers[j - 1] = numbers[j - 1], numbers[j]
-            j--
+            j-- // to break while loop
         }
     }
 
