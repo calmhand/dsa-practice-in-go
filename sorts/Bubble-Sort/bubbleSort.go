@@ -20,23 +20,21 @@ func Run() {
 
     fmt.Println(fmt.Sprintf("%s%d", "Before: ", numbers))
     
-    for i := 1; i < len(numbers); i++ {
-        for j := 0; j < len(numbers) - 1; j++ {
+    for i := 0; i < len(numbers); i++ { // As 'i' reaches n - 1, the array will be sorted.
+        for j := 0; j < len(numbers) - i - 1; j++ { // After 'i' iterations, the last 'i' elements are already sorted.
             if (numbers[j] > numbers[j + 1]) {
                 // swap
-                temp := numbers[j]
-                numbers[j] = numbers[j + 1]
-                numbers[j + 1] = temp
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
             }
         }
     }
 
-    fmt.Println(fmt.Sprintf("%s%d", "After: ", numbers))
+    fmt.Println(fmt.Sprintf("%s%d\n", "After: ", numbers))
 
 
 	/* Pseudocode - - -
-	   for (i from 1 to N)
-	     for (j from 0 to N - 1)
+	   for (i from 0 to N)
+	     for (j from 0 to N - i - 1)
 	       if (a[j] > a[j + 1])
 	         swap (a[j], a[j + 1])
 	       else continue (this is implied)
