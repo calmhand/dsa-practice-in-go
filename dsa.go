@@ -1,11 +1,11 @@
 package main
 
 import (
-    "fmt"
-    "remo/bubble"
+	"fmt"
+	bubbleSort "remo/bubble"
 )
 
 func main() {
-    fmt.Println("hello, dsa")
-    bubbleSort.Hello()
+	fmt.Println("hello, dsa")
+	bubbleSort.Run()
 }
