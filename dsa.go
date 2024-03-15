@@ -6,6 +6,7 @@ import (
     insertionSort "remo/insertion"
     selectionSort "remo/selection"
     quickSort "remo/quick"
+    mergeSort "remo/merge"
 )
 
 func main() {
@@ -14,4 +15,5 @@ func main() {
     insertionSort.Run()
     selectionSort.Run()
     quickSort.Run()
+    mergeSort.Run()
 }

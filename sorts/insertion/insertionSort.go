@@ -1,7 +1,7 @@
 package insertion
 
 import (
-    "fmt"
+	"fmt"
 )
 
 // Starting from left to right, examine each item and compare it to items on its left.
@@ -12,18 +12,18 @@ import (
 // Best case: O(n)
 
 func Run() {
-    fmt.Println("Running Insertion Sort...")
-    numbers := [7]int{2, 8, 5, 3, 9, 4, 7}
+	fmt.Println("Running Insertion Sort...")
+	numbers := [7]int{2, 8, 5, 3, 9, 4, 7}
 
-    fmt.Println(fmt.Sprintf("%s%d", "Before: ", numbers))
-    
-    for i := 1; i < len(numbers); i++ {
-        j := i
-        for j > 0 && numbers[j - 1] > numbers[j] {
-            numbers[j], numbers[j - 1] = numbers[j - 1], numbers[j]
-            j-- // to break while loop
-        }
-    }
+	fmt.Println(fmt.Sprintf("%s%d", "Before: ", numbers))
 
-    fmt.Println(fmt.Sprintf("%s%d\n", "After: ", numbers))
+	for i := 1; i < len(numbers); i++ {
+		j := i
+		for j > 0 && numbers[j-1] > numbers[j] {
+			numbers[j], numbers[j-1] = numbers[j-1], numbers[j]
+			j-- // to break while loop
+		}
+	}
+
+	fmt.Println(fmt.Sprintf("%s%d\n", "After: ", numbers))
 }
