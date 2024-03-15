@@ -15,7 +15,7 @@ import "fmt"
 */
 
 func Run() {
-	fmt.Println("Running bubble sort...")
+	fmt.Println("Running Bubble Sort...")
 	numbers := [7]int{2, 8, 5, 3, 9, 4, 1}
 
     fmt.Println(fmt.Sprintf("%s%d", "Before: ", numbers))

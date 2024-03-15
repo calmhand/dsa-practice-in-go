@@ -5,6 +5,7 @@ import (
 	bubbleSort "remo/bubble"
     insertionSort "remo/insertion"
     selectionSort "remo/selection"
+    quickSort "remo/quick"
 )
 
 func main() {
@@ -12,4 +13,5 @@ func main() {
 	bubbleSort.Run()
     insertionSort.Run()
     selectionSort.Run()
+    quickSort.Run()
 }
