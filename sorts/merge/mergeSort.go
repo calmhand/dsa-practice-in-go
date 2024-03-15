@@ -31,11 +31,15 @@ func mergeSort(a []int) []int {
     if len(a) < 2 {
         return a
     }
+    
+    // "a[:len(a) / 2]" is an example of Slices in go.
+    // Ex: a[low : high]
+    // This syntax is basically saying: Slice off the last "len(a) / 2" elements and return an
+    // array with the rest of the elements.
+    first := mergeSort(a[:len(a) / 2]) // Call mergeSort on the first half of the array.
+    second := mergeSort(a[len(a) / 2:]) // Call mergeSort on the second half of the array.
 
-    first := mergeSort(a[:len(a) / 2])
-    second := mergeSort(a[len(a) / 2:])
-
-    return merge(first, second)
+    return merge(first, second) // Once we're at the lowest point, begin the merge.
 }
 
 func merge(a, b []int) []int {
