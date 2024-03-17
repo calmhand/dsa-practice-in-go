@@ -8,14 +8,15 @@ import (
 
 // A heap is a ordered binary tree. A 'max heap' has a strict rule where the value of the
 // parent nodes are of a larger value than the child nodes (vice-versa for a 'min heap').
-// Steps: Create a max heap, 
+// Steps: Create a max heap, remove the largest item, and place the item in a sorted partition.
+// 
 
 // Worst Case: O(n*logn)
 // Best Case: O(n*logn)
 
 func Run() {
 	fmt.Println("Running Heap Sort...")
-	numbers := []int{2, 8, 5, 3, 9, 4, 7}
+	numbers := []int{2, 8, 5, 3, 9, 4, 7} // If the length of an array is odd, the tree is "complete". 
 
 	fmt.Println(fmt.Sprintf("%s%d", "Before: ", numbers))
 
@@ -25,7 +26,7 @@ func Run() {
 }
 
 func heapSort(a []int, length int) {
-	for i := length/2 - 1; i >= 0; i-- {
+	for i := length/2 - 1; i >= 0; i-- { // i == index of parent node
 		heapify(a, length, i)
 	}
 
@@ -35,12 +36,12 @@ func heapSort(a []int, length int) {
 	}
 }
 
-func heapify(a []int, length, i int) {
+func heapify(a []int, length, i int) { // O(n)
 	parent := i           // index of a parent node
 	leftChild := 2*i + 1  // index of the left child of parent
 	rightChild := 2*i + 2 // index of the right child of parent
 
-	if leftChild < length && a[leftChild] > a[parent] {
+	if leftChild < length && a[leftChild] > a[parent] { // If the index of the child is NOT sorted, AND the left child is larger than its parent.
 		parent = leftChild
 	}
 
@@ -48,8 +49,8 @@ func heapify(a []int, length, i int) {
 		parent = rightChild
 	}
 
-	if parent != i {
+	if parent != i { // Check if a new value was to parent from previous if conditions.
 		a[i], a[parent] = a[parent], a[i]
-		heapify(a, length, parent)
+		heapify(a, length, parent) // heapify the sub-tree after the swap
 	}
 }
