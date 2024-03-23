@@ -22,7 +22,7 @@ func Run() {
 
 	heapSort(numbers, len(numbers))
 
-	fmt.Println(fmt.Sprintf("%s%d", "After: ", numbers))
+	fmt.Println(fmt.Sprintf("%s%d\n", "After: ", numbers))
 }
 
 func heapSort(a []int, length int) {
